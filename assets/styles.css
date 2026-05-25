@@ -575,6 +575,29 @@ p { line-height: 1.7; color: var(--charcoal-soft); margin: 0; text-wrap: pretty;
 }
 .footer-cols a:hover { color: var(--gold); }
 
+.footer-text {
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+.footer-lang-text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-lang-text a {
+  color: rgba(255,255,255,.7);
+  font-size: 13px;
+  letter-spacing: .12em;
+  transition: color .2s;
+}
+.footer-lang-text a:hover,
+.footer-lang-text a.is-active {
+  color: var(--gold);
+}
+
 @media (max-width: 1180px) {
   .footer-top { grid-template-columns: 1fr; gap: 48px; }
 }

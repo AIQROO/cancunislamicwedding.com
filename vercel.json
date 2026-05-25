@@ -43,22 +43,10 @@
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/inicio", "destination": "/es/", "permanent": true },
     { "source": "/accueil", "destination": "/fr/", "permanent": true },
-    { "source": "/nosotros", "destination": "/es/about", "permanent": true },
-    { "source": "/servicios", "destination": "/es/services", "permanent": true },
-    { "source": "/paquetes", "destination": "/es/packages", "permanent": true },
     { "source": "/contacto", "destination": "/es/contact", "permanent": true },
-    { "source": "/preguntas", "destination": "/es/faq", "permanent": true },
-    { "source": "/proceso", "destination": "/es/process", "permanent": true },
-    { "source": "/inspiracion", "destination": "/es/inspiration", "permanent": true },
-    { "source": "/por-que-cancun", "destination": "/es/why-cancun", "permanent": true },
     { "source": "/privacidad", "destination": "/es/privacy", "permanent": true },
     { "source": "/aviso-de-privacidad", "destination": "/es/privacy", "permanent": true },
     { "source": "/terminos", "destination": "/es/terms", "permanent": true },
-    { "source": "/terminos-y-condiciones", "destination": "/es/terms", "permanent": true },
-    { "source": "/why", "destination": "/why-cancun", "permanent": true },
-    { "source": "/blog/post", "destination": "/blog-post", "permanent": false },
-    { "source": "/es/blog/post", "destination": "/es/blog-post", "permanent": false },
-    { "source": "/fr/blog/post", "destination": "/fr/blog-post", "permanent": false },
-    { "source": "/ar/blog/post", "destination": "/ar/blog-post", "permanent": false }
+    { "source": "/terminos-y-condiciones", "destination": "/es/terms", "permanent": true }
   ]
 }
