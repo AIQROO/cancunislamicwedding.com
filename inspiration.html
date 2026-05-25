@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Bodas reales, parejas reales. Galería curada e historias detalladas de Nikah celebrados en el Caribe mexicano.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0F4C3A">
+<link rel="canonical" href="https://cancunislamicweddings.com/inspiration">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cancun Islamic Weddings">
+<meta property="og:title" content="Inspiración · Cancun Islamic Weddings">
+<meta property="og:description" content="Bodas reales, parejas reales. Galería curada e historias detalladas de Nikah celebrados en el Caribe mexicano.">
+<meta property="og:url" content="https://cancunislamicweddings.com/inspiration">
+<meta property="og:image" content="https://cancunislamicweddings.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cancun Islamic Weddings — Bodas halal de destino">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inspiración · Cancun Islamic Weddings">
+<meta name="twitter:description" content="Bodas reales, parejas reales. Galería curada e historias detalladas de Nikah celebrados en el Caribe mexicano.">
+<meta name="twitter:image" content="https://cancunislamicweddings.com/og-image.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Inspiración · Cancún Islamic Weddings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.gal-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+.gal-filters button { background: transparent; border: 1px solid var(--warm-gray); padding: 10px 18px; border-radius: 999px; font-size: 13px; cursor: pointer; color: var(--charcoal-soft); transition: all .2s; }
+.gal-filters button.active { background: var(--emerald); color: #fff; border-color: var(--emerald); }
+.gal { columns: 3; column-gap: 16px; }
+.gal img { width: 100%; margin-bottom: 16px; border-radius: var(--radius-md); cursor: pointer; transition: transform .35s, opacity .35s; break-inside: avoid; }
+.gal img:hover { transform: scale(1.02); }
+.gal .item { break-inside: avoid; }
+.gal .item.hidden { display: none; }
+.story { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--warm-gray); }
+.story:nth-child(even) > .arch-frame { order: 2; }
+.story .arch-frame { height: 480px; border-radius: 50% 50% 14px 14px / 38% 38% 14px 14px; }
+.story .arch-frame img { width:100%; height:100%; object-fit:cover; }
+.story h2 em { font-style: italic; color: var(--gold); }
+.story .meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.lightbox { position: fixed; inset: 0; background: rgba(8,42,32,.94); display: none; align-items: center; justify-content: center; z-index: 100; padding: 40px; }
+.lightbox.is-open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 86vh; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.1); color: #fff; border: 0; font-size: 22px; cursor: pointer; }
+@media (max-width: 860px) { .gal { columns: 2; } .story { grid-template-columns: 1fr; } .story:nth-child(even) > .arch-frame { order: 0; } }
+@media (max-width: 540px) { .gal { columns: 1; } }
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow" data-es="Inspiración" data-en="Inspiration">Inspiración</span>
+    <h1 data-es="Bodas reales. Familias reales. Halal de verdad." data-en="Real weddings. Real families. Real halal.">Bodas reales. Familias reales. Halal de verdad.</h1>
+    <p data-es="Una galería curada de momentos de las parejas que ya celebraron con nosotros — y dos historias contadas a detalle." data-en="A curated gallery of moments from couples who already celebrated with us — and two stories told in detail.">Una galería curada de momentos de las parejas que ya celebraron con nosotros — y dos historias contadas a detalle.</p>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container">
+    <div class="gal-filters" id="gal-filters">
+      <button class="active" data-f="all" data-es="Todo" data-en="All">Todo</button>
+      <button data-f="nikah">Nikah</button>
+      <button data-f="walima">Walima</button>
+      <button data-f="mehndi">Mehndi</button>
+      <button data-f="decor" data-es="Decoración" data-en="Decor">Decoración</button>
+    </div>
+    <div class="gal" id="gal">
+      <div class="item" data-cat="nikah"><img alt="Inspiración — nikah" width="600" height="400" loading="eager" decoding="async" fetchpriority="high" src="assets/img/photo-1519225421980-715cb0215aed-w600.jpg"></div>
+      <div class="item" data-cat="walima"><img alt="Inspiración — walima" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1465495976277-4387d4b0b4c6-w600.jpg"></div>
+      <div class="item" data-cat="decor"><img alt="Inspiración — decor" width="600" height="401" loading="lazy" decoding="async" src="assets/img/photo-1511795409834-ef04bbd61622-w600.jpg"></div>
+      <div class="item" data-cat="mehndi"><img alt="Inspiración — mehndi" width="600" height="900" loading="lazy" decoding="async" src="assets/img/photo-1583939003579-730e3918a45a-w600.jpg"></div>
+      <div class="item" data-cat="nikah"><img alt="Inspiración — nikah" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1519741497674-611481863552-w600.jpg"></div>
+      <div class="item" data-cat="decor"><img alt="Inspiración — decor" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1414235077428-338989a2e8c0-w600.jpg"></div>
+      <div class="item" data-cat="walima"><img alt="Inspiración — walima" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1522673607200-164d1b6ce486-w600.jpg"></div>
+      <div class="item" data-cat="nikah"><img alt="Inspiración — nikah" width="600" height="750" loading="lazy" decoding="async" src="assets/img/photo-1535463731090-e34f4b5098c5-w600.jpg"></div>
+      <div class="item" data-cat="decor"><img alt="Inspiración — decor" width="600" height="401" loading="lazy" decoding="async" src="assets/img/photo-1464366400600-7168b8af9bc3-w600.jpg"></div>
+      <div class="item" data-cat="mehndi"><img alt="Inspiración — mehndi" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1610741083757-1ae88e1a17f7-w600.jpg"></div>
+      <div class="item" data-cat="walima"><img alt="Inspiración — walima" width="600" height="400" loading="lazy" decoding="async" src="assets/img/photo-1540541338287-41700207dee6-w600.jpg"></div>
+      <div class="item" data-cat="decor"><img alt="Inspiración — decor" width="600" height="399" loading="lazy" decoding="async" src="assets/img/photo-1507525428034-b723cf961d3e-w600.jpg"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow" data-es="Historias reales" data-en="Real stories">Historias reales</span>
+        <h2 style="margin-top:14px" data-es="Dos bodas. Dos continentes. Una promesa." data-en="Two weddings. Two continents. One promise.">Dos bodas. Dos continentes. Una promesa.</h2>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <div class="arch-frame"><img alt="Pareja celebrando su Nikah" width="900" height="600" loading="lazy" decoding="async" src="assets/img/photo-1519225421980-715cb0215aed-w900.jpg"></div>
+      <div>
+        <div class="meta">Aisha & Yusuf · Toronto → Cancún · Feb 2026</div>
+        <h2 data-es="Un nikah <em>frente al mar</em>, con familia desde tres países." data-en="A nikah <em>by the sea</em>, with family from three countries.">Un nikah <em>frente al mar</em>, con familia desde tres países.</h2>
+        <p style="margin-top:16px" data-es="Aisha es palestina-canadiense; Yusuf, libanés-americano. Querían un punto medio para sus familias y eligieron Cancún. 65 invitados, walima privada en resort, decoración con arcos mihrab y catering halal certificado." data-en="Aisha is Palestinian-Canadian; Yusuf, Lebanese-American. They wanted a middle ground for their families and chose Cancún. 65 guests, private resort walima, mihrab-arched decor and certified halal catering.">Aisha es palestina-canadiense; Yusuf, libanés-americano. Querían un punto medio para sus familias y eligieron Cancún. 65 invitados, walima privada en resort, decoración con arcos mihrab y catering halal certificado.</p>
+        <p style="margin-top:12px" data-es="&laquo;Lo más mágico fue ver a mis primas de Ramala bailando con la familia mexicana del catering. Eso no se planea — pero sí se permite que pase.&raquo;" data-en="&laquo;The most magical part was seeing my cousins from Ramallah dancing with the Mexican catering family. You don't plan that — but you let it happen.&raquo;">«Lo más mágico fue ver a mis primas de Ramala bailando con la familia mexicana del catering. Eso no se planea — pero sí se permite que pase.»</p>
+      </div>
+    </div>
+
+    <div class="story reveal">
+      <div class="arch-frame"><img alt="Pareja celebrando su Nikah" width="900" height="600" loading="lazy" decoding="async" src="assets/img/photo-1465495976277-4387d4b0b4c6-w900.jpg"></div>
+      <div>
+        <div class="meta">Layla & Karim · Londres → Tulum · Nov 2025</div>
+        <h2 data-es="Tres días — mehndi, nikah y walima — en una <em>hacienda</em> con arcos." data-en="Three days — mehndi, nikah and walima — in a <em>hacienda</em> with arches.">Tres días — mehndi, nikah y walima — en una <em>hacienda</em> con arcos.</h2>
+        <p style="margin-top:16px" data-es="Una boda paquistaní-marroquí en formato 3 días. 130 invitados de 9 países. Mehndi en jardín privado con henna y música andalusí, nikah al amanecer en arco de palma, walima de noche con DJ y producción cinema." data-en="A Pakistani-Moroccan wedding in 3-day format. 130 guests from 9 countries. Private-garden mehndi with henna and Andalusian music, sunrise nikah under a palm arch, evening walima with DJ and cinematic production.">Una boda paquistaní-marroquí en formato 3 días. 130 invitados de 9 países. Mehndi en jardín privado con henna y música andalusí, nikah al amanecer en arco de palma, walima de noche con DJ y producción cinema.</p>
+        <p style="margin-top:12px" data-es="&laquo;Tres familias, tres tradiciones, tres días. Y nunca tuvimos que explicar dos veces qué es halal.&raquo;" data-en="&laquo;Three families, three traditions, three days. And we never had to explain twice what halal means.&raquo;">«Tres familias, tres tradiciones, tres días. Y nunca tuvimos que explicar dos veces qué es halal.»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada" aria-hidden="true"><button class="lightbox-close" id="lb-close" aria-label="Cerrar">×</button><img id="lb-img" alt=""></div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+  document.querySelectorAll('#gal-filters button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#gal-filters button').forEach(x => x.classList.toggle('active', x === b));
+      const f = b.dataset.f;
+      document.querySelectorAll('#gal .item').forEach(it => {
+        it.classList.toggle('hidden', !(f === 'all' || it.dataset.cat === f));
+      });
+    });
+  });
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  document.querySelectorAll('#gal img').forEach(img => {
+    img.addEventListener('click', () => { lbImg.src = img.src.replace('w=600','w=1600'); lb.classList.add('is-open'); });
+  });
+  document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('is-open'));
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('is-open'); });
+</script>
+</body>
+</html>

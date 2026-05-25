@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/img/photo-*-w120.jpg
+
+Sitemap: https://cancunislamicweddings.com/sitemap.xml
