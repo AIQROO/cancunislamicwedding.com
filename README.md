@@ -1,4 +1,4 @@
-# Cancun Islamic Weddings
+# Cancun Islamic Weddings 
 
 Sitio web estático de **Cancun Islamic Weddings** — bodas islámicas de destino, 100% halal, en Cancún, Playa del Carmen y Tulum.
 
