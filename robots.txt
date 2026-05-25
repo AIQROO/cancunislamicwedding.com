@@ -1,5 +1,28 @@
 User-agent: *
 Allow: /
 Disallow: /assets/img/photo-*-w120.jpg
+Disallow: /404
+Disallow: /es/404
+Disallow: /fr/404
+Disallow: /ar/404
+
+# GPT crawlers, Perplexity, Anthropic, etc.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://cancunislamicweddings.com/sitemap.xml

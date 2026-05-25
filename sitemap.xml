@@ -1,17 +1,563 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cancunislamicweddings.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://cancunislamicweddings.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cancunislamicweddings.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://cancunislamicweddings.com/packages</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://cancunislamicweddings.com/venues</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://cancunislamicweddings.com/why-cancun</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cancunislamicweddings.com/process</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cancunislamicweddings.com/inspiration</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://cancunislamicweddings.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cancunislamicweddings.com/blog/post</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://cancunislamicweddings.com/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://cancunislamicweddings.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://cancunislamicweddings.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://cancunislamicweddings.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cancunislamicweddings.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/about"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/about"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/about"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/about"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/services"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/services"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/services"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/services"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/packages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/packages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/packages"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/packages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/packages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/packages"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/packages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/packages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/packages"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/packages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/packages"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/packages"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/venues</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/venues"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/venues"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/venues"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/venues"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/venues"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/venues</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/venues"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/venues"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/venues"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/venues"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/venues"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/venues</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/venues"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/venues"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/venues"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/venues"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/venues"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/venues</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/venues"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/venues"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/venues"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/venues"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/venues"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/why-cancun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/why-cancun"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/why-cancun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/why-cancun"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/why-cancun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/why-cancun"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/why-cancun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/why-cancun"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/why-cancun"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/process</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/process"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/process"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/process"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/process"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/process</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/process"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/process"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/process"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/process"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/process</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/process"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/process"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/process"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/process"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/process</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/process"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/process"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/process"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/process"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/inspiration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/inspiration"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/inspiration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/inspiration"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/inspiration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/inspiration"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/inspiration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/inspiration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/inspiration"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/blog-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog-post"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/blog-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog-post"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/blog-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog-post"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/blog-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/blog-post"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/blog-post"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/faq"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/faq"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/faq"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/faq"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/contact"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/contact"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/contact"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/contact"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/terms"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/es/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/terms"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/fr/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/terms"/>
+  </url>
+  <url>
+    <loc>https://cancunislamicweddings.com/ar/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cancunislamicweddings.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cancunislamicweddings.com/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cancunislamicweddings.com/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cancunislamicweddings.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cancunislamicweddings.com/terms"/>
+  </url>
 </urlset>

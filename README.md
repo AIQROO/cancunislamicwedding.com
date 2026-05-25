@@ -1,102 +1,116 @@
 # Cancun Islamic Weddings 
 
-Sitio web estático de **Cancun Islamic Weddings** — bodas islámicas de destino, 100% halal, en Cancún, Playa del Carmen y Tulum.
+Multilingual static site for **Cancun Islamic Weddings** — halal Islamic destination weddings in Cancún, Playa del Carmen and Tulum.
 
-Operado por **Muslimin International Halal Group SA. de CV.**
+Operated by **Muslimin International Halal Group SA. de CV.**
 
 ---
 
-## Stack
+## Languages
 
-- **HTML / CSS / Vanilla JS** — sin framework, sin build step
-- **Vercel** — hosting estático con `cleanUrls`, headers de seguridad y redirects
-- **i18n** — bilingüe ES/EN vía atributos `data-es` / `data-en` y `localStorage`
+- 🇺🇸 **English** — `/` (default, x-default)
+- 🇲🇽 **Spanish** — `/es/`
+- 🇫🇷 **French** — `/fr/`
+- 🇸🇦 **Arabic** — `/ar/` (RTL, with Tajawal + Amiri fonts)
 
-## Estructura
+First-visit auto-redirect from `/` to `/es/`, `/fr/` or `/ar/` based on the browser's `Accept-Language`. Choice is sticky via `localStorage`.
+
+## Structure
 
 ```
 .
-├── index.html              Home
-├── about.html              Nosotros
-├── services.html           Servicios
-├── packages.html           Paquetes (Nikah Ceremony · Riviera · Luxury)
-├── venues.html             Venues (resorts, playas, cenotes, haciendas)
-├── why-cancun.html         ¿Por qué Cancún?
-├── process.html            Proceso (5 pasos)
-├── inspiration.html        Galería + historias reales
-├── blog.html               Blog
-├── blog-post.html          Post de blog (template único)
-├── faq.html                FAQ
-├── contact.html            Contacto + formulario
-├── privacy.html            Aviso de privacidad
-├── terms.html              Términos y condiciones
-├── 404.html                Página de error
-├── robots.txt
-├── sitemap.xml
-├── vercel.json             Config Vercel (cleanUrls, headers, redirects)
-├── favicon.ico
-├── og-image.jpg            Imagen para Open Graph (1200×630)
-├── apple-touch-icon.png
+├── index.html              Home (EN)
+├── about.html              About (EN)
+├── … 13 EN pages
+├── privacy.html            Privacy notice (EN)
+├── terms.html              Terms & conditions (EN)
+├── 404.html                Multilingual 404 (detects lang from path)
+├── robots.txt              Allows GPTBot, ChatGPT-User, PerplexityBot, Claude-Web
+├── sitemap.xml             56 URLs with xhtml:link hreflang
+├── vercel.json             cleanUrls, headers, multilang redirects
+├── es/                     Spanish versions (14 pages)
+├── fr/                     French versions (14 pages)
+├── ar/                     Arabic versions (14 pages, RTL)
+├── favicon.ico + og-image.jpg
 └── assets/
-    ├── styles.css          CSS global
-    ├── site.js             Header/footer compartidos, i18n, mobile menu
-    ├── pattern.svg         Patrón islámico de fondo
-    ├── logo.png            Logo principal
-    ├── logo.svg
-    ├── logo-symbol.png     Símbolo aislado (footer + favicon)
-    └── img/                Fotos (44 archivos, ~4.5 MB)
+    ├── styles.css          Global CSS + RTL support
+    ├── site.js             Language detection, nav/footer injection, lang switching
+    ├── pattern.svg, logo.png, logo-symbol.png
+    └── img/                44 venue/blog/testimonial photos
 ```
 
-## Desarrollo local
+**Total: 57 HTML pages × 4 languages = served from one static repo.**
+
+## SEO / GEO
+
+Each page has:
+- `<html lang="…">` (and `dir="rtl"` on Arabic)
+- Localized `<title>` and `<meta name="description">`
+- `<link rel="canonical">`
+- 5 `<link rel="alternate" hreflang>` tags (EN, ES, FR, AR, x-default)
+- Open Graph (`og:title`, `og:description`, `og:image`, `og:locale`, `og:locale:alternate × 3`)
+- Twitter Card
+- **JSON-LD structured data**:
+  - Homepage: `ProfessionalService` (LocalBusiness) + `WebSite`
+  - Services page: `Service` schema
+  - Blog post: `Article` schema
+  - Inner pages: `BreadcrumbList`
+
+`sitemap.xml` lists 56 URLs (14 pages × 4 languages) each with their hreflang alternates.
+
+`robots.txt` explicitly allows GPTBot, ChatGPT-User, PerplexityBot, Claude-Web, anthropic-ai, Google-Extended — for **GEO (Generative Engine Optimization)**.
+
+## Stack
+
+- **Pure HTML / CSS / vanilla JS** — no framework, no build step at deploy time
+- **Vercel** — static hosting with `cleanUrls`, security headers, edge cache
+- **No data-attr swap in HTML** — each language has its own pre-rendered HTML, so crawlers and LLMs see the right content immediately (no JS execution required)
+
+## Develop locally
 
 ```bash
 python3 -m http.server 8000
-# Abre http://localhost:8000
+# Open http://localhost:8000
 ```
 
-No requiere instalación de dependencias.
-
-## Deploy en Vercel
+## Deploy
 
 ```bash
 npx vercel --prod
 ```
 
-O conecta el repo desde el dashboard de Vercel — detecta sitio estático automáticamente y aplica `vercel.json`.
+Vercel auto-detects static site, picks up `vercel.json` config.
 
-### Configuración Vercel incluida
+## Edit content
 
-- `cleanUrls: true` — `/about` en vez de `/about.html`
-- Cache `immutable` 1 año para `/assets/*`
-- HSTS, X-Frame-Options, Permissions-Policy, Referrer-Policy
-- Redirects ES → EN: `/nosotros → /about`, `/servicios → /services`, etc.
-- Custom `404.html`
+### Single-language edits
+Edit the file in that language's folder. `index.html` is EN; `es/index.html` is ES; `fr/index.html` is FR; `ar/index.html` is AR.
 
-## Editar contenido
+### Cross-language edits
+Edits must be made in **all 4 versions** of the file. The helper scripts that generated these files are in `/tmp/` (not committed). For ongoing maintenance, edit each language directly or rebuild from scratch via the team.
 
-### Texto bilingüe
-Los textos usan atributos `data-es` y `data-en`. Edita ambos:
+### Shared nav/footer
+Edit `assets/site.js` — the header and footer are injected per page and read localized labels from the `I18N` object inside.
 
-```html
-<h1 data-es="Tu Nikah en el Caribe" data-en="Your Nikah on the Caribbean">
-  Tu Nikah en el Caribe
-</h1>
-```
+## Build scripts (not in repo)
 
-El JS muestra el correcto según el idioma activo (`localStorage.ciw_lang`).
+- `/tmp/i18n_split.py` — split bilingual source into EN root + ES `/es/`
+- `/tmp/i18n_fr_ar.py` — generate FR/AR from EN via translation dict
+- `/tmp/gen_legal.py` — generate 8 legal pages (privacy + terms × 4 langs)
+- `/tmp/inject_jsonld.py` — inject structured data per page
 
-### Header / Footer compartidos
-Se inyectan vía `assets/site.js`. Para modificar nav, footer o redes sociales, edita ese archivo. Cualquier cambio se refleja en las 15 páginas automáticamente.
+These ran one-time to produce the current state. Keep them in `/tmp/` or commit to a `scripts/` folder if you want them in the repo.
 
-### Imágenes
-Las 44 fotos están en `assets/img/` con nombres `photo-{id}-w{width}.jpg`. Para sustituirlas por fotos reales, mantén el mismo nombre o actualiza la referencia en el HTML.
-
-## Contacto operativo
+## Contact
 
 - WhatsApp: +52 55 4911 4170
 - Email: admin@islamicaqr.com
 - Instagram: [@cancunislamicwedding](https://instagram.com/cancunislamicwedding)
 
-## Licencia
+## Disclaimer
 
-© 2026 Muslimin International Halal Group SA. de CV. Todos los derechos reservados.
+The French and Arabic translations are professional-quality drafts produced by AI. Native-speaker review is recommended before publishing to a production audience — especially the religious terminology in Arabic and the legal language in `privacy.html` / `terms.html`.
+
+## License
+
+© 2026 Muslimin International Halal Group SA. de CV. All rights reserved.

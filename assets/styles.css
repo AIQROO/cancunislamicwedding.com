@@ -823,3 +823,178 @@ p { line-height: 1.7; color: var(--charcoal-soft); margin: 0; text-wrap: pretty;
     margin-bottom: 24px;
   }
 }
+
+/* ----------- Language toggle: make it work for anchors too ----------- */
+.lang-toggle a {
+  background: transparent;
+  border: 0;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--charcoal-soft);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all .2s;
+}
+.lang-toggle a.active,
+.lang-toggle a:hover {
+  background: var(--emerald);
+  color: #fff;
+}
+
+/* ============================================================
+   RTL SUPPORT (Arabic /ar/)
+   ============================================================ */
+[dir="rtl"] {
+  font-family: 'Tajawal', 'Cairo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Tajawal', 'Cairo', 'Inter', system-ui, sans-serif;
+  --font-display: 'Amiri', 'Playfair Display', Georgia, serif;
+  --font-display-alt: 'Amiri', 'Playfair Display', Georgia, serif;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-body);
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .script {
+  /* Cursive Latin doesn't fit Arabic context — use Amiri italic instead */
+  font-family: 'Amiri', serif;
+  font-style: italic;
+  font-size: 1.4em;
+}
+
+/* Mirror navigation */
+[dir="rtl"] .nav {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .nav-actions {
+  flex-direction: row-reverse;
+}
+
+/* Mirror text alignment in justified blocks */
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] .lead {
+  text-align: right;
+}
+[dir="rtl"] .legal p,
+[dir="rtl"] .legal li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: manual;
+}
+
+/* Eyebrows — flip the dash */
+[dir="rtl"] .eyebrow::before {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Buttons with arrows */
+[dir="rtl"] .btn .arrow,
+[dir="rtl"] .arrow {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .btn:hover .arrow {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* SVG icons that have directional meaning (chevrons in carousel) */
+[dir="rtl"] .carousel-btn svg {
+  transform: scaleX(-1);
+}
+
+/* Hero — keep image right of copy in LTR; in RTL, image goes left of copy */
+[dir="rtl"] .hero-grid {
+  direction: rtl;
+}
+
+/* Footer */
+[dir="rtl"] .footer-grid,
+[dir="rtl"] .footer-top {
+  direction: rtl;
+}
+[dir="rtl"] .footer-brand {
+  flex-direction: row-reverse;
+}
+
+/* Lists indentation */
+[dir="rtl"] ul, [dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* Forms */
+[dir="rtl"] .field input,
+[dir="rtl"] .field select,
+[dir="rtl"] .field textarea {
+  text-align: right;
+}
+
+/* Trust strip — natural row reversal */
+[dir="rtl"] .trust-strip .row {
+  flex-direction: row-reverse;
+}
+
+/* Skip link in RTL */
+[dir="rtl"] .skip-link:focus {
+  left: auto;
+  right: 16px;
+}
+
+/* Hero badge / tag positions need mirroring */
+[dir="rtl"] .hero-badge {
+  left: auto;
+  right: -32px;
+}
+[dir="rtl"] .hero-tag {
+  right: auto;
+  left: -16px;
+  transform: rotate(-6deg);
+}
+
+@media (max-width: 860px) {
+  [dir="rtl"] .hero-badge { right: 8px; left: auto; }
+  [dir="rtl"] .hero-tag { left: 8px; right: auto; }
+}
+
+/* Package featured tag stays centered (no change needed) */
+
+/* Bullet markers in package lists */
+[dir="rtl"] .package li::before,
+[dir="rtl"] .package li {
+  margin-right: 0;
+}
+[dir="rtl"] .package li {
+  flex-direction: row-reverse;
+}
+
+/* Feature checklist bullets */
+[dir="rtl"] .feature-checklist li {
+  padding-left: 0;
+  padding-right: 28px;
+}
+[dir="rtl"] .feature-checklist li::before {
+  left: auto;
+  right: 0;
+}
+
+/* Carousel testimonial author */
+[dir="rtl"] .testimonial-author {
+  flex-direction: row-reverse;
+}
+
+/* Mobile menu spacing fix */
+[dir="rtl"] .mobile-menu a {
+  text-align: right;
+}

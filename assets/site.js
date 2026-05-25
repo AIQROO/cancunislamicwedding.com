@@ -1,102 +1,249 @@
 /* ============================================================
-   CancunIslamicWeddings — shared scripts
-   - bilingual (ES/EN) via [data-es]/[data-en]
-   - shared header/footer injection
-   - mobile menu, scroll reveal, sticky header
-   - tweaks panel (font, gold intensity, density)
+   CancunIslamicWeddings — shared scripts (multilingual)
+   - Languages: EN (root), ES (/es/), FR (/fr/), AR (/ar/, RTL)
+   - Header/footer injected per page, localized server-side via path
+   - Mobile menu, sticky header, language switching via URL navigation
+   - Auto-redirect to user's browser language on first visit (root only)
    ============================================================ */
 
 (function () {
-  /* ---- i18n ---- */
-  const STORE_LANG = 'ciw_lang';
-  const STORE_TWEAKS = 'ciw_tweaks';
+  'use strict';
 
-  function applyLang(lang) {
-    document.documentElement.setAttribute('lang', lang);
-    document.querySelectorAll('[data-es][data-en]').forEach(el => {
-      const txt = el.getAttribute('data-' + lang);
-      if (txt !== null) {
-        // preserve nested HTML if data attr contains <
-        if (/<[a-z]/i.test(txt)) el.innerHTML = txt;
-        else el.textContent = txt;
-      }
-    });
-    document.querySelectorAll('[data-es-attr]').forEach(el => {
-      try {
-        const map = JSON.parse(el.getAttribute('data-' + lang + '-attr'));
-        Object.entries(map).forEach(([k, v]) => el.setAttribute(k, v));
-      } catch (e) {}
-    });
-    document.querySelectorAll('.lang-toggle button').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    localStorage.setItem(STORE_LANG, lang);
+  // ---------- Language detection from URL ----------
+  function detectLang() {
+    const p = location.pathname;
+    if (p.startsWith('/es/') || p === '/es') return 'es';
+    if (p.startsWith('/fr/') || p === '/fr') return 'fr';
+    if (p.startsWith('/ar/') || p === '/ar') return 'ar';
+    return 'en';
   }
 
-  window.CIW_setLang = applyLang;
-  window.CIW_getLang = () => localStorage.getItem(STORE_LANG) || 'es';
+  function rootPath() {
+    // For pages inside /es/ /fr/ /ar/, use that prefix; otherwise empty
+    const lang = detectLang();
+    return lang === 'en' ? '' : '/' + lang;
+  }
 
-  /* ---- Tweaks ---- */
-  const defaultTweaks = {
-    headingFont: 'playfair', // 'playfair' | 'cormorant'
-    goldIntensity: 1,        // 0.4 – 1.6
-    density: 'comfortable',  // 'comfortable' | 'compact'
+  function langPrefix(lang) {
+    return lang === 'en' ? '' : '/' + lang;
+  }
+
+  // Extract current page slug (e.g. 'about.html' or 'index.html')
+  function currentPage() {
+    const parts = location.pathname.split('/').filter(Boolean);
+    const last = parts[parts.length - 1];
+    if (!last || ['es','fr','ar'].indexOf(last) >= 0) return 'index.html';
+    return last.includes('.') ? last : last + '.html';
+  }
+
+  // ---------- Localized labels for nav, footer, errors ----------
+  const I18N = {
+    en: {
+      nav: ['Home','About','Services','Packages','Venues','Why Cancún','Process','Inspiration','Blog','FAQ'],
+      cta: 'Get a quote',
+      ctaMobile: 'Book a video call',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      skip: 'Skip to content',
+      langLabel: 'Language',
+      footer: {
+        tagline: 'Halal · Cancún · Riviera Maya',
+        lead: 'Halal destination weddings in Cancún and the Riviera Maya.',
+        meta: 'Operated by Muslimin International Halal Group SA. de CV. · Endorsed by the Islamic Association of Quintana Roo · In partnership with Muslim Friendly Halal Certification.',
+        services: 'Services', destinations: 'Destinations', contact: 'Contact', community: 'Community',
+        privacy: 'Privacy policy', terms: 'Terms & conditions',
+        copyright: '© 2026 Cancun Islamic Weddings · Muslimin International Halal Group SA. de CV.',
+        addressShort: 'Cancún, Quintana Roo, Mexico',
+        servicesItems: [
+          ['services.html#nikah','Nikah planning'],
+          ['services.html#destination','Destination weddings'],
+          ['services.html#catering','Certified halal catering'],
+          ['services.html#imam','Imam service'],
+          ['services.html#guests','Guest experience'],
+          ['services.html#multiday','Multi-day coordination'],
+        ],
+        communityItems: [
+          'Islamic Association of Quintana Roo',
+          'Muslim Friendly Halal Certification',
+          'Muslimin International Halal Group SA. de CV.',
+        ],
+      }
+    },
+    es: {
+      nav: ['Inicio','Nosotros','Servicios','Paquetes','Venues','¿Por qué Cancún?','Proceso','Inspiración','Blog','FAQ'],
+      cta: 'Cotizar',
+      ctaMobile: 'Agendar videollamada',
+      menuOpen: 'Abrir menú',
+      menuClose: 'Cerrar menú',
+      skip: 'Saltar al contenido',
+      langLabel: 'Idioma',
+      footer: {
+        tagline: 'Halal · Cancún · Riviera Maya',
+        lead: 'Bodas halal de destino en Cancún y la Riviera Maya.',
+        meta: 'Operado por Muslimin International Halal Group SA. de CV. · Avalados por la Asociación Islámica de Quintana Roo · En alianza con Muslim Friendly Halal Certification.',
+        services: 'Servicios', destinations: 'Destinos', contact: 'Contacto', community: 'Comunidad',
+        privacy: 'Política de privacidad', terms: 'Términos y condiciones',
+        copyright: '© 2026 Cancun Islamic Weddings · Muslimin International Halal Group SA. de CV.',
+        addressShort: 'Cancún, Quintana Roo, México',
+        servicesItems: [
+          ['services.html#nikah','Planeación de Nikah'],
+          ['services.html#destination','Bodas destino'],
+          ['services.html#catering','Catering halal certificado'],
+          ['services.html#imam','Servicio de Imam'],
+          ['services.html#guests','Experiencia para invitados'],
+          ['services.html#multiday','Coordinación multi-día'],
+        ],
+        communityItems: [
+          'Asociación Islámica de Quintana Roo',
+          'Muslim Friendly Halal Certification',
+          'Muslimin International Halal Group SA. de CV.',
+        ],
+      }
+    },
+    fr: {
+      nav: ['Accueil','À propos','Services','Forfaits','Lieux','Pourquoi Cancún','Processus','Inspiration','Blog','FAQ'],
+      cta: 'Demander un devis',
+      ctaMobile: 'Réserver un appel vidéo',
+      menuOpen: 'Ouvrir le menu',
+      menuClose: 'Fermer le menu',
+      skip: 'Aller au contenu',
+      langLabel: 'Langue',
+      footer: {
+        tagline: 'Halal · Cancún · Riviera Maya',
+        lead: 'Mariages halal de destination à Cancún et la Riviera Maya.',
+        meta: "Opéré par Muslimin International Halal Group SA. de CV. · Approuvé par l'Association Islamique du Quintana Roo · En partenariat avec Muslim Friendly Halal Certification.",
+        services: 'Services', destinations: 'Destinations', contact: 'Contact', community: 'Communauté',
+        privacy: 'Politique de confidentialité', terms: 'Conditions générales',
+        copyright: '© 2026 Cancun Islamic Weddings · Muslimin International Halal Group SA. de CV.',
+        addressShort: 'Cancún, Quintana Roo, Mexique',
+        servicesItems: [
+          ['services.html#nikah','Planification du Nikah'],
+          ['services.html#destination','Mariages de destination'],
+          ['services.html#catering','Traiteur halal certifié'],
+          ['services.html#imam',"Service d'imam"],
+          ['services.html#guests','Expérience invités'],
+          ['services.html#multiday','Coordination multi-jours'],
+        ],
+        communityItems: [
+          'Association Islamique du Quintana Roo',
+          'Muslim Friendly Halal Certification',
+          'Muslimin International Halal Group SA. de CV.',
+        ],
+      }
+    },
+    ar: {
+      nav: ['الرئيسية','من نحن','الخدمات','الباقات','الأماكن','لماذا كانكون','العملية','إلهام','المدوّنة','الأسئلة الشائعة'],
+      cta: 'اطلب عرض سعر',
+      ctaMobile: 'احجز مكالمة فيديو',
+      menuOpen: 'افتح القائمة',
+      menuClose: 'أغلق القائمة',
+      skip: 'تخطَّ إلى المحتوى',
+      langLabel: 'اللغة',
+      footer: {
+        tagline: 'حلال · كانكون · ريفييرا مايا',
+        lead: 'حفلات زفاف حلال في الوجهة بكانكون وريفييرا مايا.',
+        meta: 'تشغّلها Muslimin International Halal Group SA. de CV. · باعتماد الجمعية الإسلامية في كينتانا رو · بالشراكة مع Muslim Friendly Halal Certification.',
+        services: 'الخدمات', destinations: 'الوجهات', contact: 'تواصل معنا', community: 'المجتمع',
+        privacy: 'سياسة الخصوصية', terms: 'الشروط والأحكام',
+        copyright: '© ٢٠٢٦ Cancun Islamic Weddings · Muslimin International Halal Group SA. de CV.',
+        addressShort: 'كانكون، كينتانا رو، المكسيك',
+        servicesItems: [
+          ['services.html#nikah','تخطيط النكاح'],
+          ['services.html#destination','حفلات زفاف الوجهة'],
+          ['services.html#catering','تموين حلال معتمد'],
+          ['services.html#imam','خدمة الإمام'],
+          ['services.html#guests','تجربة الضيوف'],
+          ['services.html#multiday','تنسيق متعدد الأيام'],
+        ],
+        communityItems: [
+          'الجمعية الإسلامية في كينتانا رو',
+          'Muslim Friendly Halal Certification',
+          'Muslimin International Halal Group SA. de CV.',
+        ],
+      }
+    }
   };
 
-  function loadTweaks() {
-    try { return { ...defaultTweaks, ...JSON.parse(localStorage.getItem(STORE_TWEAKS) || '{}') }; }
-    catch { return { ...defaultTweaks }; }
-  }
-
-  function applyTweaks(t) {
-    const root = document.documentElement;
-    root.style.setProperty('--font-display',
-      t.headingFont === 'cormorant'
-        ? "'Cormorant Garamond', Georgia, serif"
-        : "'Playfair Display', 'Cormorant Garamond', Georgia, serif"
-    );
-    root.style.setProperty('--gold-intensity', t.goldIntensity);
-    root.setAttribute('data-density', t.density);
-    localStorage.setItem(STORE_TWEAKS, JSON.stringify(t));
-  }
-
-  window.CIW_applyTweaks = applyTweaks;
-  window.CIW_loadTweaks = loadTweaks;
-
-  /* ---- Header / Footer markup ---- */
-  const NAV_ITEMS = [
-    { href: 'index.html',     es: 'Inicio',         en: 'Home' },
-    { href: 'about.html',     es: 'Nosotros',       en: 'About' },
-    { href: 'services.html',  es: 'Servicios',      en: 'Services' },
-    { href: 'packages.html',  es: 'Paquetes',       en: 'Packages' },
-    { href: 'venues.html',    es: 'Venues',         en: 'Venues' },
-    { href: 'why-cancun.html',es: '¿Por qué Cancún?',en: 'Why Cancún' },
-    { href: 'process.html',   es: 'Proceso',        en: 'Process' },
-    { href: 'inspiration.html',es: 'Inspiración',   en: 'Inspiration' },
-    { href: 'blog.html',      es: 'Blog',           en: 'Blog' },
-    { href: 'faq.html',       es: 'FAQ',            en: 'FAQ' },
+  const NAV_HREFS = [
+    'index.html','about.html','services.html','packages.html','venues.html',
+    'why-cancun.html','process.html','inspiration.html','blog.html','faq.html',
   ];
 
-  function buildHeader(currentPage) {
-    const links = NAV_ITEMS.map(i =>
-      `<li><a href="${i.href}" data-es="${i.es}" data-en="${i.en}" class="${i.href === currentPage ? 'active' : ''}">${i.es}</a></li>`
-    ).join('');
+  // ---------- Helpers ----------
+  const lang = detectLang();
+  const t = I18N[lang];
+  const root = lang === 'en' ? '' : '/' + lang;
+
+  // Compute href to a page in CURRENT language
+  function pageHref(filename) {
+    if (filename === 'index.html') return root + '/';
+    return root + '/' + filename;
+  }
+
+  // Compute href to switch to a different language, preserving the current page
+  function switchLangHref(newLang) {
+    const page = currentPage();
+    const prefix = newLang === 'en' ? '' : '/' + newLang;
+    if (page === 'index.html') return prefix + '/';
+    return prefix + '/' + page;
+  }
+
+  // Asset paths from current page depth
+  function assetHref(rel) {
+    // From subpath /xx/page.html, assets are at ../assets/ ; from root, at /assets/
+    const depth = location.pathname.split('/').filter(Boolean);
+    const inSubdir = depth.length && ['es','fr','ar'].indexOf(depth[0]) >= 0;
+    return (inSubdir ? '../' : '/') + rel;
+  }
+
+  // ---------- Auto-redirect on first visit ----------
+  function maybeRedirect() {
+    // Only redirect from EN root index.html, never from sub-pages or other langs
+    if (lang !== 'en') return;
+    if (location.pathname !== '/' && location.pathname !== '/index.html') return;
+    try {
+      if (localStorage.getItem('ciw_lang_chosen') === '1') return;
+    } catch (_) { return; }
+    const accept = (navigator.languages || [navigator.language || 'en']).map(s => (s||'').toLowerCase());
+    let target = null;
+    for (const a of accept) {
+      if (a.startsWith('es')) { target = 'es'; break; }
+      if (a.startsWith('fr')) { target = 'fr'; break; }
+      if (a.startsWith('ar')) { target = 'ar'; break; }
+      if (a.startsWith('en')) { break; }  // stay EN
+    }
+    if (target) {
+      try { localStorage.setItem('ciw_lang_chosen', '1'); } catch (_) {}
+      location.replace('/' + target + '/');
+    }
+  }
+
+  // ---------- Header / Footer markup ----------
+  function buildHeader() {
+    const linksHtml = NAV_HREFS.map((href, i) => {
+      const active = href === currentPage() ? ' class="active"' : '';
+      return `<li><a href="${pageHref(href)}"${active}>${t.nav[i]}</a></li>`;
+    }).join('');
+
+    const logo = assetHref('assets/logo.png');
 
     return `
-    <a class="skip-link" href="#main" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+    <a class="skip-link" href="#main">${t.skip}</a>
     <header class="site-header">
       <div class="container nav">
-        <a href="index.html" class="logo" aria-label="Cancun Islamic Wedding">
-          <img class="logo-img" src="assets/logo.png" alt="Cancun Islamic Wedding" width="180" height="44">
+        <a href="${pageHref('index.html')}" class="logo" aria-label="Cancun Islamic Wedding">
+          <img class="logo-img" src="${logo}" alt="Cancun Islamic Wedding" width="180" height="44">
         </a>
-        <ul class="nav-links">${links}</ul>
+        <ul class="nav-links">${linksHtml}</ul>
         <div class="nav-actions">
-          <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-            <button data-lang="es" aria-label="Español">ES</button>
-            <button data-lang="en" aria-label="English">EN</button>
+          <div class="lang-toggle" role="group" aria-label="${t.langLabel} / Language">
+            <a href="${switchLangHref('en')}" data-l="en" aria-label="English"${lang==='en'?' class="active"':''}>EN</a>
+            <a href="${switchLangHref('es')}" data-l="es" aria-label="Español"${lang==='es'?' class="active"':''}>ES</a>
+            <a href="${switchLangHref('fr')}" data-l="fr" aria-label="Français"${lang==='fr'?' class="active"':''}>FR</a>
+            <a href="${switchLangHref('ar')}" data-l="ar" aria-label="العربية"${lang==='ar'?' class="active"':''}>AR</a>
           </div>
-          <a href="contact.html" class="btn btn--primary nav-cta" data-es="Cotizar" data-en="Get a quote">Cotizar</a>
-          <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <a href="${pageHref('contact.html')}" class="btn btn--primary nav-cta">${t.cta}</a>
+          <button class="menu-toggle" aria-label="${t.menuOpen}" aria-expanded="false" aria-controls="mobile-menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
               <path d="M3 6h18M3 12h18M3 18h18"/>
             </svg>
@@ -105,182 +252,106 @@
       </div>
     </header>
     <nav class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobile navigation">
-      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-        <button data-lang="es" aria-label="Español">ES</button>
-        <button data-lang="en" aria-label="English">EN</button>
+      <div class="lang-toggle" role="group" aria-label="${t.langLabel} / Language">
+        <a href="${switchLangHref('en')}" aria-label="English"${lang==='en'?' class="active"':''}>EN</a>
+        <a href="${switchLangHref('es')}" aria-label="Español"${lang==='es'?' class="active"':''}>ES</a>
+        <a href="${switchLangHref('fr')}" aria-label="Français"${lang==='fr'?' class="active"':''}>FR</a>
+        <a href="${switchLangHref('ar')}" aria-label="العربية"${lang==='ar'?' class="active"':''}>AR</a>
       </div>
-      <ul>${NAV_ITEMS.map(i => `<li><a href="${i.href}" data-es="${i.es}" data-en="${i.en}">${i.es}</a></li>`).join('')}</ul>
-      <a href="contact.html" class="btn btn--primary" style="width:100%;justify-content:center" data-es="Agendar videollamada" data-en="Book a video call">Agendar videollamada</a>
+      <ul>${NAV_HREFS.map((h, i) => `<li><a href="${pageHref(h)}">${t.nav[i]}</a></li>`).join('')}</ul>
+      <a href="${pageHref('contact.html')}" class="btn btn--primary" style="width:100%;justify-content:center">${t.ctaMobile}</a>
     </nav>`;
   }
 
   function buildFooter() {
+    const f = t.footer;
+    const logoSymbol = assetHref('assets/logo-symbol.png');
+    const servicesLis = f.servicesItems.map(([href,label]) =>
+      `<li><a href="${pageHref(href.split('#')[0]) + (href.includes('#') ? '#' + href.split('#')[1] : '')}">${label}</a></li>`
+    ).join('');
+    const venueAnchors = ['cancun','playa','tulum','akumal','holbox','bacalar'];
+    const venueLabels = lang === 'ar' ? ['كانكون','بلايا ديل كارمن','تولوم','أكومال','هولبوكس','باكالار']
+      : ['Cancún','Playa del Carmen','Tulum','Akumal','Holbox','Bacalar'];
+    const venuesLis = venueAnchors.map((a,i) => `<li><a href="${pageHref('venues.html')}#${a}">${venueLabels[i]}</a></li>`).join('');
+    const communityLis = f.communityItems.map(item => `<li><span>${item}</span></li>`).join('');
+
     return `
     <footer class="site-footer">
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand-block">
             <div class="footer-brand">
-              <img src="assets/logo-symbol.png" alt="" class="footer-symbol">
+              <img src="${logoSymbol}" alt="" class="footer-symbol">
               <div>
-                <small>Halal · Cancún · Riviera Maya</small>
+                <small>${f.tagline}</small>
                 Cancun Islamic Wedding
               </div>
             </div>
-            <p class="footer-lead" data-es="Bodas halal de destino en Cancún y la Riviera Maya." data-en="Halal destination weddings in Cancún and the Riviera Maya.">
-              Bodas halal de destino en Cancún y la Riviera Maya.
-            </p>
-            <p class="footer-meta" data-es="Operado por Muslimin International Halal Group SA. de CV. · Avalados por la Asociación Islámica de Quintana Roo · En alianza con Muslim Friendly Halal Certification." data-en="Operated by Muslimin International Halal Group SA. de CV. · Endorsed by the Islamic Association of Quintana Roo · In partnership with Muslim Friendly Halal Certification.">
-              Operado por Muslimin International Halal Group SA. de CV. · Avalados por la Asociación Islámica de Quintana Roo · En alianza con Muslim Friendly Halal Certification.
-            </p>
+            <p class="footer-lead">${f.lead}</p>
+            <p class="footer-meta">${f.meta}</p>
             <div class="footer-lang">
-              <button class="lang-link" data-set-lang="es">ES</button>
+              <a class="lang-link${lang==='en'?' is-active':''}" href="${switchLangHref('en')}">EN</a>
               <span>·</span>
-              <button class="lang-link" data-set-lang="en">EN</button>
+              <a class="lang-link${lang==='es'?' is-active':''}" href="${switchLangHref('es')}">ES</a>
               <span>·</span>
-              <button class="lang-link" data-set-lang="fr" title="Coming soon">FR</button>
+              <a class="lang-link${lang==='fr'?' is-active':''}" href="${switchLangHref('fr')}">FR</a>
+              <span>·</span>
+              <a class="lang-link${lang==='ar'?' is-active':''}" href="${switchLangHref('ar')}">AR</a>
             </div>
           </div>
 
           <div class="footer-cols">
             <div>
-              <h4 data-es="Servicios" data-en="Services">Servicios</h4>
-              <ul>
-                <li><a href="services.html#nikah" data-es="Planeación de Nikah" data-en="Nikah planning">Planeación de Nikah</a></li>
-                <li><a href="services.html#destination" data-es="Bodas destino" data-en="Destination weddings">Bodas destino</a></li>
-                <li><a href="services.html#catering" data-es="Catering halal certificado" data-en="Certified halal catering">Catering halal certificado</a></li>
-                <li><a href="services.html#imam" data-es="Servicio de Imam" data-en="Imam service">Servicio de Imam</a></li>
-                <li><a href="services.html#guests" data-es="Experiencia para invitados" data-en="Guest experience">Experiencia para invitados</a></li>
-                <li><a href="services.html#multiday" data-es="Coordinación multi-día" data-en="Multi-day coordination">Coordinación multi-día</a></li>
-              </ul>
+              <h4>${f.services}</h4>
+              <ul>${servicesLis}</ul>
             </div>
             <div>
-              <h4 data-es="Destinos" data-en="Destinations">Destinos</h4>
-              <ul>
-                <li><a href="venues.html#cancun">Cancún</a></li>
-                <li><a href="venues.html#playa">Playa del Carmen</a></li>
-                <li><a href="venues.html#tulum">Tulum</a></li>
-                <li><a href="venues.html#akumal">Akumal</a></li>
-                <li><a href="venues.html#holbox">Holbox</a></li>
-                <li><a href="venues.html#bacalar">Bacalar</a></li>
-              </ul>
+              <h4>${f.destinations}</h4>
+              <ul>${venuesLis}</ul>
             </div>
             <div>
-              <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+              <h4>${f.contact}</h4>
               <ul>
                 <li><a href="https://wa.me/525549114170" target="_blank" rel="noopener">WhatsApp</a></li>
                 <li><a href="https://instagram.com/cancunislamicwedding" target="_blank" rel="noopener">Instagram</a></li>
                 <li><a href="mailto:admin@islamicaqr.com">Email</a></li>
-                <li><span data-es="Cancún, Quintana Roo, México" data-en="Cancún, Quintana Roo, Mexico">Cancún, Quintana Roo, México</span></li>
+                <li><span>${f.addressShort}</span></li>
               </ul>
             </div>
             <div>
-              <h4 data-es="Comunidad" data-en="Community">Comunidad</h4>
-              <ul>
-                <li><span data-es="Asociación Islámica de Quintana Roo" data-en="Islamic Association of Quintana Roo">Asociación Islámica de Quintana Roo</span></li>
-                <li><span>Muslim Friendly Halal Certification</span></li>
-                <li><span>Muslimin International Halal Group SA. de CV.</span></li>
-              </ul>
+              <h4>${f.community}</h4>
+              <ul>${communityLis}</ul>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <span>© 2026 Cancun Islamic Wedding · Muslimin International Halal Group SA. de CV.</span>
+          <span>${f.copyright}</span>
           <span class="footer-legal">
-            <a href="privacy.html" data-es="Política de privacidad" data-en="Privacy policy">Política de privacidad</a>
+            <a href="${pageHref('privacy.html')}">${f.privacy}</a>
             <span>·</span>
-            <a href="terms.html" data-es="Términos y condiciones" data-en="Terms & conditions">Términos y condiciones</a>
+            <a href="${pageHref('terms.html')}">${f.terms}</a>
           </span>
         </div>
       </div>
     </footer>`;
   }
 
-  /* ---- Tweaks panel ---- */
-  function buildTweaksPanel() {
-    return `
-    <div id="tweaks-panel" class="tweaks-panel" hidden>
-      <div class="tweaks-head">
-        <strong>Tweaks</strong>
-        <button id="tweaks-close" aria-label="Close">×</button>
-      </div>
-      <div class="tweaks-body">
-        <div class="tweak-row">
-          <label>Heading font</label>
-          <div class="seg" data-tweak="headingFont">
-            <button data-val="playfair">Playfair</button>
-            <button data-val="cormorant">Cormorant</button>
-          </div>
-        </div>
-        <div class="tweak-row">
-          <label>Gold intensity</label>
-          <input type="range" min="0.2" max="1.6" step="0.1" data-tweak="goldIntensity">
-          <span class="tweak-val" data-val-for="goldIntensity"></span>
-        </div>
-        <div class="tweak-row">
-          <label>Density</label>
-          <div class="seg" data-tweak="density">
-            <button data-val="comfortable">Airy</button>
-            <button data-val="compact">Compact</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
-  }
-
-  const TWEAKS_CSS = `
-    .tweaks-panel{position:fixed;right:24px;bottom:24px;width:300px;background:#fff;border:1px solid var(--warm-gray);border-radius:14px;box-shadow:0 24px 60px rgba(15,76,58,.18);z-index:80;font-family:var(--font-body);}
-    .tweaks-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--warm-gray);}
-    .tweaks-head strong{font-family:var(--font-display);color:var(--emerald);font-weight:500;font-size:18px;}
-    #tweaks-close{background:transparent;border:0;font-size:22px;color:var(--charcoal-soft);cursor:pointer;line-height:1;}
-    .tweaks-body{padding:18px;display:flex;flex-direction:column;gap:18px;}
-    .tweak-row{display:flex;flex-direction:column;gap:8px;}
-    .tweak-row label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal-soft);font-weight:500;}
-    .seg{display:inline-flex;border:1px solid var(--warm-gray);border-radius:8px;overflow:hidden;}
-    .seg button{flex:1;padding:8px 12px;background:#fff;border:0;cursor:pointer;font-size:13px;color:var(--charcoal-soft);transition:all .2s;}
-    .seg button.active{background:var(--emerald);color:#fff;}
-    .tweak-row input[type=range]{accent-color:var(--emerald);}
-    .tweak-val{font-size:12px;color:var(--charcoal-soft);align-self:flex-end;}
-  `;
-
-  /* ---- Init ---- */
+  // ---------- Init ----------
   document.addEventListener('DOMContentLoaded', () => {
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    maybeRedirect();
 
-    // Inject header / footer if placeholders exist
+    // Inject header/footer
     const headerSlot = document.getElementById('site-header');
     const footerSlot = document.getElementById('site-footer');
-    if (headerSlot) headerSlot.outerHTML = buildHeader(currentPage);
+    if (headerSlot) headerSlot.outerHTML = buildHeader();
     if (footerSlot) footerSlot.outerHTML = buildFooter();
 
-    // Apply tweaks
-    const styleEl = document.createElement('style');
-    styleEl.textContent = TWEAKS_CSS;
-    document.head.appendChild(styleEl);
-    document.body.insertAdjacentHTML('beforeend', buildTweaksPanel());
-
-    const tweaks = loadTweaks();
-    applyTweaks(tweaks);
-
-    // Lang
-    const lang = window.CIW_getLang();
-    applyLang(lang);
-    document.querySelectorAll('.lang-toggle button').forEach(b => {
-      b.addEventListener('click', () => applyLang(b.dataset.lang));
-    });
-    // Footer language links (skip FR — coming soon)
-    document.querySelectorAll('[data-set-lang]').forEach(b => {
-      const target = b.dataset.setLang;
-      if (target === 'fr') {
-        b.addEventListener('click', () => {
-          b.classList.add('is-active');
-          setTimeout(() => b.classList.remove('is-active'), 400);
-        });
-        return;
-      }
-      b.addEventListener('click', () => applyLang(target));
-      if (target === window.CIW_getLang()) b.classList.add('is-active');
+    // Mark language as chosen when user clicks any lang toggle (so we don't redirect again)
+    document.querySelectorAll('[data-l], .footer-lang a').forEach(a => {
+      a.addEventListener('click', () => {
+        try { localStorage.setItem('ciw_lang_chosen', '1'); } catch (_) {}
+      });
     });
 
     // Mobile menu
@@ -291,19 +362,17 @@
         mobileMenu.classList.toggle('is-open', open);
         mobileMenu.setAttribute('aria-hidden', String(!open));
         menuToggle.setAttribute('aria-expanded', String(open));
-        menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        menuToggle.setAttribute('aria-label', open ? t.menuClose : t.menuOpen);
         document.body.style.overflow = open ? 'hidden' : '';
       };
       menuToggle.addEventListener('click', () => setOpen(!mobileMenu.classList.contains('is-open')));
-      mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => setOpen(false));
-      });
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) setOpen(false);
       });
     }
 
-    // Sticky header style
+    // Sticky header on scroll
     const header = document.querySelector('.site-header');
     if (header) {
       const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -311,52 +380,7 @@
       onScroll();
     }
 
-    // Reveal — show everything immediately (animation disabled)
+    // Reveal — show everything (animation disabled, but class still applied for any CSS hooks)
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-
-    // Tweaks panel wiring
-    const panel = document.getElementById('tweaks-panel');
-    panel.querySelectorAll('[data-tweak]').forEach(el => {
-      const key = el.dataset.tweak;
-      if (el.tagName === 'INPUT') {
-        el.value = tweaks[key];
-        const valSpan = panel.querySelector(`[data-val-for="${key}"]`);
-        if (valSpan) valSpan.textContent = (+tweaks[key]).toFixed(1);
-        el.addEventListener('input', () => {
-          tweaks[key] = +el.value;
-          if (valSpan) valSpan.textContent = (+el.value).toFixed(1);
-          applyTweaks(tweaks);
-        });
-      } else {
-        el.querySelectorAll('button').forEach(b => {
-          b.classList.toggle('active', b.dataset.val === tweaks[key]);
-          b.addEventListener('click', () => {
-            tweaks[key] = b.dataset.val;
-            el.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
-            applyTweaks(tweaks);
-          });
-        });
-      }
-    });
-    const isEmbedded = window.parent && window.parent !== window;
-    const notifyParent = (msg) => {
-      if (!isEmbedded) return;
-      try { window.parent.postMessage(msg, '*'); } catch (_) { /* noop */ }
-    };
-
-    document.getElementById('tweaks-close').addEventListener('click', () => {
-      panel.hidden = true;
-      notifyParent({ type: '__edit_mode_dismissed' });
-    });
-
-    // Tweaks host wiring (only when embedded in the design editor)
-    if (isEmbedded) {
-      window.addEventListener('message', (e) => {
-        if (!e.data || typeof e.data !== 'object') return;
-        if (e.data.type === '__activate_edit_mode') panel.hidden = false;
-        if (e.data.type === '__deactivate_edit_mode') panel.hidden = true;
-      });
-      notifyParent({ type: '__edit_mode_available' });
-    }
   });
 })();
