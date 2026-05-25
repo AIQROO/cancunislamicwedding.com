@@ -1,4 +1,4 @@
-# Cancun Islamic Weddings 
+# Cancun Islamic Weddings
 
 Multilingual static site for **Cancun Islamic Weddings** — halal Islamic destination weddings in Cancún, Playa del Carmen and Tulum.
 
