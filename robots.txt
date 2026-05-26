@@ -25,4 +25,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://cancunislamicweddings.com/sitemap.xml
+Sitemap: https://www.cancunislamicwedding.com/sitemap.xml
