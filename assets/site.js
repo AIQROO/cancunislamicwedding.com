@@ -278,7 +278,7 @@
         </div>
 
         <div class="footer-bottom">
-          <span>${f.copyright}</span>
+          <span>${f.copyright} · Dropped by <a href="https://acidmkt.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Acid MKT - Marketing agency in Cancún</a></span>
           <span class="footer-legal">
             <a href="${pageHref('privacy.html')}">${f.privacy}</a>
             <span>·</span>
